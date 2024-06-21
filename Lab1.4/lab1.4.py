@@ -7,6 +7,14 @@ class IPv4RandomNetwork(IPv4Network):
         mask = random.randint(8,24)
         IPv4Network.__init__(self, (net, mask), strict=False)
 
-net1 = IPv4RandomNetwork()
-print(net1)
+address_list = []
+
+for i in range(0, 51):
+    net1 = IPv4RandomNetwork()
+    address_list.append(net1)
+
+
+
+
+
 
