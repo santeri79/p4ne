@@ -1,4 +1,5 @@
 import glob
+import re
 
 
 import glob
@@ -23,4 +24,4 @@ print(*my_list, sep='\n')
 
 s1 = "ip address "
 for i in range(len(my_list)):
-    print(my_list[i], my_list[i][len(s1):])
+    print(my_list[i][len(s1):])
