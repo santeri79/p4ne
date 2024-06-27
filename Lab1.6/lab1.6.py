@@ -12,10 +12,6 @@ def match_func(s):
     else:
         return None
 
-
-#s = "ip address 192.168.1.1 255.255.255.0"
-#print(f(s))
-
 for i in files:
     with open(i) as f:
         line_list = f.readlines()
@@ -24,13 +20,9 @@ for i in files:
             if s1:
                 print(s1)
 
-
-
         f.close()
 
-   # if s.find("ip address") != -1:
-    #    return ipaddress.ip_address(s)
-    #else: return None
+
 
 
 
