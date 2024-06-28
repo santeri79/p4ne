@@ -14,11 +14,10 @@ headers = {
 
 url = "https://10.31.70.209/restconf/data/Cisco-IOS-XE-process-memory-oper:memory-usage-processes"
 
-r = requests.get(url, headers=headers, auth=(USER, PASSWORD), verify=False)
-p = r.json()
+my_request = requests.get(url, headers=headers, auth=(USER, PASSWORD), verify=False)
+p = my_request.json()
 
-
-k = p["Cisco-IOS-XE-process-memory-oper:memory-usage-processes"]["memory-usage-process"]
+filtered = p["Cisco-IOS-XE-process-memory-oper:memory-usage-processes"]["memory-usage-process"]
 
 
 app = Flask(__name__)
@@ -40,7 +39,7 @@ def process():
 if __name__ == '__main__':
 
 
-    n = sorted(k, key=sort_func,reverse=True)[0:10]
+    n = sorted(filtered, key=sort_func,reverse=True)[0:10]
 
 
     app.run(debug=True)
